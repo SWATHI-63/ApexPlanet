@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intermediate Web Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Responsive Navbar -->
+    <nav class="navbar">
+      <div class="logo">Wepage</div>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#todo">To-Do List</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#responsive-layout">Responsive Layout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Interactive Webpage</h1>
+        <p>
+          Your all-in-one platform for staying connected, organized, and
+          creative
+        </p>
+        <div class="hero-features">
+          <div class="feature">
+            <span class="feature-icon">📧</span>
+            <span>Contact Us</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">✅</span>
+            <span>Manage Tasks</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📸</span>
+            <span>Share Gallery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="grid-container">
+      <!-- Section Navigation Dots -->
+      <div class="section-nav">
+        <div
+          class="nav-dot active"
+          data-section="Contact"
+          onclick="scrollToSection('contact')"
+        ></div>
+        <div
+          class="nav-dot"
+          data-section="To-Do"
+          onclick="scrollToSection('todo')"
+        ></div>
+        <div
+          class="nav-dot"
+          data-section="Gallery"
+          onclick="scrollToSection('gallery')"
+        ></div>
+        <div
+          class="nav-dot"
+          data-section="Responsive"
+          onclick="scrollToSection('responsive-layout')"
+        ></div>
+      </div>
+
+      <div class="responsive-grid">
+        <!-- Contact Form Section -->
+        <section id="contact" class="grid-item contact-section">
+          <div class="section-content">
+            <div class="section-header">
+              <h2>📧 Contact Us</h2>
+              <p class="section-subtitle">Get in touch with our team</p>
+            </div>
+            <form id="contactForm">
+              <div class="input-group">
+                <input type="text" id="name" placeholder="Your Name" required />
+                <label for="name">Name</label>
+              </div>
+              <div class="input-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+              <div class="input-group">
+                <textarea
+                  id="message"
+                  placeholder="Your message here..."
+                  required
+                ></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <span class="btn-icon">📤</span>
+              </button>
+              <p id="formError" class="error"></p>
+            </form>
+          </div>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section id="todo" class="grid-item todo-section">
+          <div class="section-content">
+            <div class="section-header">
+              <h2>✅ To-Do List</h2>
+              <p class="section-subtitle">Organize your tasks efficiently</p>
+            </div>
+            <div class="todo-controls">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="taskInput"
+                  placeholder="Add a new task..."
+                />
+                <label for="taskInput">New Task</label>
+              </div>
+              <button id="addTaskBtn" class="add-btn">
+                <span>Add Task</span>
+                <span class="btn-icon">➕</span>
+              </button>
+            </div>
+            <ul id="taskList" class="task-list-container"></ul>
+          </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="gallery" class="grid-item gallery-section">
+          <div class="section-content">
+            <div class="section-header">
+              <h2>📸 Image Gallery</h2>
+              <p class="section-subtitle">Share your favorite moments</p>
+            </div>
+            <div class="gallery-controls">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="imgUrlInput"
+                  placeholder="Paste image URL here..."
+                />
+                <label for="imgUrlInput">Image URL</label>
+              </div>
+              <button id="addImgBtn" class="add-btn">
+                <span>Add Image</span>
+                <span class="btn-icon">🖼️</span>
+              </button>
+            </div>
+            <div id="galleryList" class="gallery-grid"></div>
+          </div>
+        </section>
+
+        <!-- Responsive Layout Demo Section -->
+        <section
+          id="responsive-layout"
+          class="grid-item responsive-layout-section"
+        >
+          <div class="section-header">
+            <h2>📱 Responsive Layout Demo</h2>
+            <p class="section-subtitle">Experience adaptive design in action</p>
+          </div>
+
+          <div class="responsive-demo-container">
+            <!-- Device Preview Cards -->
+            <div class="device-previews">
+              <div class="device-card desktop-preview">
+                <div class="device-header">
+                  <span class="device-icon">🖥️</span>
+                  <h3>Desktop View</h3>
+                  <span class="screen-size">1200px+</span>
+                </div>
+                <div class="device-screen">
+                  <div class="mini-layout desktop-layout">
+                    <div class="mini-nav"></div>
+                    <div class="mini-grid">
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device-card tablet-preview">
+                <div class="device-header">
+                  <span class="device-icon">📱</span>
+                  <h3>Tablet View</h3>
+                  <span class="screen-size">768px - 1199px</span>
+                </div>
+                <div class="device-screen">
+                  <div class="mini-layout tablet-layout">
+                    <div class="mini-nav"></div>
+                    <div class="mini-grid">
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device-card mobile-preview">
+                <div class="device-header">
+                  <span class="device-icon">📱</span>
+                  <h3>Mobile View</h3>
+                  <span class="screen-size">320px - 767px</span>
+                </div>
+                <div class="device-screen">
+                  <div class="mini-layout mobile-layout">
+                    <div class="mini-nav"></div>
+                    <div class="mini-grid">
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                      <div class="mini-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Controls -->
+            <div class="responsive-controls">
+              <h3>🎛️ Test Responsiveness</h3>
+              <div class="viewport-simulator">
+                <button class="viewport-btn active" data-viewport="desktop">
+                  Desktop
+                </button>
+                <button class="viewport-btn" data-viewport="tablet">
+                  Tablet
+                </button>
+                <button class="viewport-btn" data-viewport="mobile">
+                  Mobile
+                </button>
+              </div>
+              <div class="screen-info">
+                <p>
+                  Current Viewport: <span id="current-viewport">Desktop</span>
+                </p>
+                <p>Screen Width: <span id="screen-width">1200px+</span></p>
+                <p>Layout: <span id="layout-type">Multi-column Grid</span></p>
+              </div>
+            </div>
+
+            <!-- Responsive Features List -->
+            <div class="responsive-features">
+              <h3>✨ Responsive Features</h3>
+              <div class="features-grid">
+                <div class="feature-item">
+                  <span class="feature-emoji">📐</span>
+                  <h4>Flexible Grid</h4>
+                  <p>Adapts from 4 columns to 1 column based on screen size</p>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-emoji">📱</span>
+                  <h4>Touch Friendly</h4>
+                  <p>Larger buttons and touch targets on mobile devices</p>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-emoji">🎨</span>
+                  <h4>Adaptive Typography</h4>
+                  <p>Text scales appropriately across all screen sizes</p>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-emoji">⚡</span>
+                  <h4>Performance Optimized</h4>
+                  <p>Efficient CSS and optimized images for all devices</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
