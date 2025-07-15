@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Learning Hub</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h1><i class="fas fa-graduation-cap"></i> Learning Hub</h1>
+        </div>
+        <div class="nav-menu">
+          <button class="nav-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="#quiz" class="nav-link">Quiz</a></li>
+            <li><a href="#carousel" class="nav-link">Gallery</a></li>
+            <li><a href="#api" class="nav-link">Daily Joke</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Welcome to Interactive Learning Hub</h2>
+          <p>
+            Test your knowledge, explore our gallery, and enjoy daily jokes!
+          </p>
+          <button class="cta-button" onclick="scrollToSection('quiz')">
+            Start Learning <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Quiz Section -->
+      <section id="quiz" class="section quiz-section">
+        <div class="container">
+          <h2 class="section-title">Interactive Quiz</h2>
+          <div class="quiz-container">
+            <div class="quiz-header">
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+              </div>
+              <div class="quiz-info">
+                <span id="questionCounter">Question 1 of 5</span>
+                <span id="scoreDisplay">Score: 0</span>
+              </div>
+            </div>
+
+            <div class="quiz-content" id="quizContent">
+              <div class="question-container">
+                <h3 id="questionText">Loading question...</h3>
+                <div class="options-container" id="optionsContainer">
+                  <!-- Options will be dynamically generated -->
+                </div>
+              </div>
+            </div>
+
+            <div class="quiz-controls">
+              <button
+                id="nextButton"
+                class="quiz-btn"
+                onclick="nextQuestion()"
+                disabled
+              >
+                Next Question
+              </button>
+              <button
+                id="restartButton"
+                class="quiz-btn secondary"
+                onclick="restartQuiz()"
+                style="display: none"
+              >
+                Restart Quiz
+              </button>
+            </div>
+
+            <div class="quiz-results" id="quizResults" style="display: none">
+              <h3>Quiz Completed!</h3>
+              <div class="final-score">
+                <span id="finalScore">Your Score: 0/5</span>
+                <div class="score-message" id="scoreMessage"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Image Carousel Section -->
+      <section id="carousel" class="section carousel-section">
+        <div class="container">
+          <h2 class="section-title">Interactive Gallery</h2>
+          <div class="carousel-container">
+            <div class="carousel-wrapper">
+              <button class="carousel-btn prev" onclick="previousSlide()">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <div class="carousel-track" id="carouselTrack">
+                <!-- Images will be dynamically loaded -->
+              </div>
+
+              <button class="carousel-btn next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="carousel-indicators" id="carouselIndicators">
+              <!-- Indicators will be dynamically generated -->
+            </div>
+
+            <div class="carousel-controls">
+              <button class="carousel-control-btn" onclick="toggleAutoplay()">
+                <i class="fas fa-play" id="playIcon"></i>
+                <span id="autoplayText">Start Autoplay</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- API Section (Daily Joke) -->
+      <section id="api" class="section api-section">
+        <div class="container">
+          <h2 class="section-title">Daily Joke Corner</h2>
+          <div class="api-container">
+            <div class="joke-card">
+              <div class="joke-header">
+                <i class="fas fa-laugh"></i>
+                <h3>Joke of the Moment</h3>
+              </div>
+
+              <div class="joke-content">
+                <div class="loading-spinner" id="jokeLoader">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  <p>Loading joke...</p>
+                </div>
+
+                <div class="joke-text" id="jokeText" style="display: none">
+                  <!-- Joke content will be loaded here -->
+                </div>
+
+                <div class="joke-error" id="jokeError" style="display: none">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <p>
+                    Sorry, couldn't load a joke right now. Please try again!
+                  </p>
+                </div>
+              </div>
+
+              <div class="joke-actions">
+                <button class="joke-btn" onclick="fetchNewJoke()">
+                  <i class="fas fa-refresh"></i>
+                  Get New Joke
+                </button>
+                <button class="joke-btn secondary" onclick="shareJoke()">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+
+            <!-- Weather Widget -->
+            <div class="weather-widget">
+              <div class="weather-header">
+                <i class="fas fa-cloud-sun"></i>
+                <h3>Weather Info</h3>
+              </div>
+              <div class="weather-content" id="weatherContent">
+                <div class="loading-spinner" id="weatherLoader">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  <p>Loading weather...</p>
+                </div>
+                <div
+                  class="weather-data"
+                  id="weatherData"
+                  style="display: none"
+                >
+                  <!-- Weather data will be loaded here -->
+                </div>
+              </div>
+              <button class="weather-btn" onclick="refreshWeather()">
+                <i class="fas fa-refresh"></i>
+                Refresh
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2025 Interactive Learning Hub. Built with HTML5, CSS3 &
+          JavaScript ES6+
+        </p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
