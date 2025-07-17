@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Web Development Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Animated Background Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-code"></i>
+          <span>Swathi</span>
+        </div>
+        <div class="nav-menu">
+          <a href="#home" class="nav-link active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#about" class="nav-link" data-section="about">
+            <i class="fas fa-user"></i>
+            <span>About</span>
+          </a>
+          <a href="#projects" class="nav-link" data-section="projects">
+            <i class="fas fa-folder-open"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#todo" class="nav-link" data-section="todo">
+            <i class="fas fa-tasks"></i>
+            <span>Todo App</span>
+          </a>
+          <a href="#products" class="nav-link" data-section="products">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Shop</span>
+          </a>
+          <a href="#contact" class="nav-link" data-section="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Hi, I'm Swathi<br />
+              <span class="typing-text">Web Developer</span>
+            </h1>
+            <p class="hero-subtitle">
+              Creating amazing digital experiences with modern web technologies
+            </p>
+            <div class="hero-buttons">
+              <button
+                class="btn btn-primary"
+                onclick="scrollToSection('projects')"
+              >
+                <i class="fas fa-rocket"></i>
+                View Projects
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="scrollToSection('contact')"
+              >
+                <i class="fas fa-envelope"></i>
+                Get In Touch
+              </button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="floating-card">
+              <div class="card-content">
+                <i class="fas fa-code"></i>
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript</p>
+              </div>
+            </div>
+            <div class="floating-card" style="animation-delay: 0.5s">
+              <div class="card-content">
+                <i class="fas fa-server"></i>
+                <h3>Backend</h3>
+                <p>Node.js, Express</p>
+              </div>
+            </div>
+            <div class="floating-card" style="animation-delay: 1s">
+              <div class="card-content">
+                <i class="fas fa-database"></i>
+                <h3>Database</h3>
+                <p>MongoDB, MySQL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <p>Get to know more about my background and skills</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <div class="about-photo">
+              <div class="photo-container">
+                <div class="profile-photo">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="photo-badge">
+                  <i class="fas fa-code"></i>
+                </div>
+              </div>
+            </div>
+            <h3>Hi, I'm Swathi - A Passionate Web Developer</h3>
+            <p>
+              With expertise in modern web technologies, I create responsive and
+              user-friendly applications. I specialize in full-stack development
+              using JavaScript, React, Node.js, and various databases.
+            </p>
+
+            <div class="skills-section">
+              <h4>Technical Skills</h4>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML5</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-css3-alt"></i>
+                  <span>CSS3</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-js-square"></i>
+                  <span>JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-react"></i>
+                  <span>React</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+              <h3>3+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>My Projects</h2>
+          <p>A collection of my best work and achievements</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>
+                A full-stack e-commerce solution with payment integration and
+                admin dashboard.
+              </p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn-small btn-secondary">
+                  <i class="fab fa-github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="project-content">
+              <h3>Task Management App</h3>
+              <p>
+                A collaborative task management application with real-time
+                updates and team features.
+              </p>
+              <div class="project-tech">
+                <span>Vue.js</span>
+                <span>Express</span>
+                <span>Socket.io</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn-small btn-secondary">
+                  <i class="fab fa-github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="project-content">
+              <h3>Analytics Dashboard</h3>
+              <p>
+                Interactive data visualization dashboard with real-time charts
+                and reporting features.
+              </p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>D3.js</span>
+                <span>Python</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn-small btn-secondary">
+                  <i class="fab fa-github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Todo App Section -->
+    <section id="todo" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Todo & Notes App</h2>
+          <p>Manage your tasks and notes with local storage persistence</p>
+        </div>
+        <div class="todo-container">
+          <div class="todo-input-section">
+            <div class="input-group">
+              <input
+                type="text"
+                id="todoInput"
+                placeholder="Add a new task..."
+              />
+              <button id="addTodoBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Add Task
+              </button>
+            </div>
+            <div class="todo-filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="pending">Pending</button>
+              <button class="filter-btn" data-filter="completed">
+                Completed
+              </button>
+            </div>
+          </div>
+          <div class="todo-stats">
+            <div class="stat">
+              <span class="stat-number" id="totalTasks">0</span>
+              <span class="stat-label">Total</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="pendingTasks">0</span>
+              <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="completedTasks">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+          </div>
+          <div class="todo-list" id="todoList">
+            <!-- Todo items will be dynamically generated -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Product Store</h2>
+          <p>Browse our collection with advanced filtering and sorting</p>
+        </div>
+        <div class="products-controls">
+          <div class="search-filter-section">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+              />
+            </div>
+            <div class="filters">
+              <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="books">Books</option>
+                <option value="home">Home & Garden</option>
+              </select>
+              <select id="sortBy">
+                <option value="name">Sort by Name</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+          </div>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+              <i class="fas fa-th"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+        <div class="products-grid" id="productsContainer">
+          <!-- Products will be dynamically generated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <p>Let's discuss your next project</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>dhivagarswathi@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>9361387469</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>TamilNadu, India</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="contactName"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="contactEmail"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="contactSubject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="contactMessage"
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <i class="fas fa-code"></i>
+            <span>Swathi</span>
+          </div>
+          <p>&copy; 2025 Swathi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
