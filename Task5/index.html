@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeWave - Premium Technology Solutions & Digital Services"
+    />
+    <meta
+      name="keywords"
+      content="technology, web development, mobile apps, digital solutions"
+    />
+    <meta name="author" content="CodeWave Team" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%23007bff' rx='20'/><text x='90' y='120' font-size='90' text-anchor='middle' fill='white'>🌐</text></svg>"
+    />
+
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#007bff" />
+    <meta name="msapplication-TileColor" content="#007bff" />
+
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        line-height: 1.6;
+      }
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #fdf2f8 0%, #fef7f0 50%, #fff 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #f3e8ff;
+        border-top: 3px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <title>CodeWave - Premium Technology Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Animated Particles Background -->
+    <div id="particles-background" class="particles-background">
+      <canvas id="particles-canvas" class="particles-canvas"></canvas>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" role="banner">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+          <div class="nav-brand">
+            <a href="#home" class="logo">
+              <span class="logo-icon">🌐</span>
+              <span class="logo-text">CodeWave</span>
+            </a>
+          </div>
+
+          <button
+            class="mobile-menu-toggle"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+
+          <ul class="nav-menu" role="menubar">
+            <li role="none">
+              <a href="#home" role="menuitem" class="nav-link active">Home</a>
+            </li>
+            <li role="none">
+              <a href="#about" role="menuitem" class="nav-link">About</a>
+            </li>
+            <li role="none">
+              <a href="#services" role="menuitem" class="nav-link">Services</a>
+            </li>
+            <li role="none">
+              <a href="#products" role="menuitem" class="nav-link">Products</a>
+            </li>
+            <li role="none">
+              <a href="#contact" role="menuitem" class="nav-link">Contact</a>
+            </li>
+            <li role="none">
+              <button class="theme-toggle" aria-label="Toggle dark mode">
+                🌙
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+      <!-- Hero Section -->
+      <section id="home" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 id="hero-title" class="hero-title">
+              <span class="hero-subtitle">Transform Your Digital Presence</span>
+              <span class="hero-main-title">CodeWave</span>
+              <span class="hero-tagline">Crafting Digital Excellence</span>
+            </h1>
+            <p class="hero-description">
+              We're a forward-thinking technology company dedicated to creating
+              exceptional digital experiences. From intuitive web applications
+              to scalable cloud solutions, we help businesses thrive in the
+              digital age with cutting-edge technology and innovative design.
+            </p>
+            <div class="hero-buttons">
+              <button
+                class="btn btn-primary"
+                onclick="scrollToSection('services')"
+              >
+                <span>Discover Our Services</span>
+                <span class="btn-icon">→</span>
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="scrollToSection('contact')"
+              >
+                <span>Start Your Project</span>
+                <span class="btn-icon">🚀</span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-graphic">
+              <div class="floating-card" style="--delay: 0s">💻</div>
+              <div class="floating-card" style="--delay: 0.5s">📱</div>
+              <div class="floating-card" style="--delay: 1s">🎨</div>
+              <div class="floating-card" style="--delay: 1.5s">⚡</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="about-title" class="section-title">About CodeWave</h2>
+            <p class="section-subtitle">
+              Empowering businesses through innovative technology solutions
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-content">
+              <div class="about-text">
+                <h3>Our Vision</h3>
+                <p>
+                  At CodeWave, we envision a digital future where technology
+                  seamlessly integrates with human creativity. We're committed
+                  to building solutions that not only meet today's challenges
+                  but anticipate tomorrow's opportunities, helping businesses
+                  stay ahead in an ever-evolving digital landscape.
+                </p>
+
+                <h3>Core Values</h3>
+                <ul class="values-list">
+                  <li>
+                    <span class="value-icon">🎯</span> Quality & Innovation
+                    Excellence
+                  </li>
+                  <li>
+                    <span class="value-icon">🤝</span> Collaborative Partnership
+                  </li>
+                  <li><span class="value-icon">🔧</span> Technical Mastery</li>
+                  <li><span class="value-icon">🌱</span> Sustainable Growth</li>
+                  <li>
+                    <span class="value-icon">💡</span> Creative Problem Solving
+                  </li>
+                  <li>
+                    <span class="value-icon">🔒</span> Security & Reliability
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat-card">
+                <div class="stat-number" data-count="250">0</div>
+                <div class="stat-label">Projects Delivered</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-count="99">0</div>
+                <div class="stat-label">Client Satisfaction %</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label">Years of Excellence</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-count="35">0</div>
+                <div class="stat-label">Expert Team Members</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section
+        id="services"
+        class="services-section"
+        aria-labelledby="services-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="services-title" class="section-title">Our Expertise</h2>
+            <p class="section-subtitle">
+              Comprehensive digital solutions tailored to your business needs
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card" data-service="web">
+              <div class="service-icon">🌐</div>
+              <h3>Web Development</h3>
+              <p>
+                Modern, responsive websites and web applications built with the
+                latest technologies, focusing on performance, accessibility, and
+                user experience.
+              </p>
+              <ul class="service-features">
+                <li>Responsive & Mobile-First Design</li>
+                <li>Progressive Web Applications</li>
+                <li>E-commerce & CMS Solutions</li>
+                <li>Performance & SEO Optimization</li>
+              </ul>
+              <button class="service-btn" onclick="openServiceModal('web')">
+                Learn More
+              </button>
+            </div>
+
+            <div class="service-card" data-service="mobile">
+              <div class="service-icon">📱</div>
+              <h3>Mobile Development</h3>
+              <p>
+                Cross-platform and native mobile applications that deliver
+                exceptional user experiences across iOS and Android platforms.
+              </p>
+              <ul class="service-features">
+                <li>Native iOS & Android Apps</li>
+                <li>React Native & Flutter</li>
+                <li>Cross-Platform Solutions</li>
+                <li>App Store Optimization</li>
+              </ul>
+              <button class="service-btn" onclick="openServiceModal('mobile')">
+                Learn More
+              </button>
+            </div>
+
+            <div class="service-card" data-service="design">
+              <div class="service-icon">🎨</div>
+              <h3>UI/UX Design</h3>
+              <p>
+                Human-centered design approach that creates intuitive,
+                accessible, and visually stunning digital experiences for your
+                users.
+              </p>
+              <ul class="service-features">
+                <li>User Experience Research</li>
+                <li>Interactive Prototyping</li>
+                <li>Design System Creation</li>
+                <li>Accessibility Compliance</li>
+              </ul>
+              <button class="service-btn" onclick="openServiceModal('design')">
+                Learn More
+              </button>
+            </div>
+
+            <div class="service-card" data-service="cloud">
+              <div class="service-icon">☁️</div>
+              <h3>Cloud Solutions</h3>
+              <p>
+                Scalable, secure cloud infrastructure and deployment strategies
+                that grow with your business and ensure optimal performance.
+              </p>
+              <ul class="service-features">
+                <li>Multi-Cloud Architecture</li>
+                <li>DevOps & Automation</li>
+                <li>Microservices Design</li>
+                <li>Security & Monitoring</li>
+              </ul>
+              <button class="service-btn" onclick="openServiceModal('cloud')">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section
+        id="products"
+        class="products-section"
+        aria-labelledby="products-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="products-title" class="section-title">Featured Products</h2>
+            <p class="section-subtitle">
+              Explore our premium digital solutions
+            </p>
+          </div>
+
+          <div class="products-filter">
+            <button class="filter-btn active" data-filter="all">
+              All Products
+            </button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            <button class="filter-btn" data-filter="saas">
+              SaaS Solutions
+            </button>
+          </div>
+
+          <div class="products-grid" id="products-grid">
+            <!-- Products will be dynamically loaded -->
+          </div>
+
+          <div class="products-pagination">
+            <button class="pagination-btn" id="prev-page">← Previous</button>
+            <div class="pagination-info">
+              <span id="current-page">1</span> of
+              <span id="total-pages">3</span>
+            </div>
+            <button class="pagination-btn" id="next-page">Next →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="contact-title" class="section-title">
+              Let's Build Something Amazing
+            </h2>
+            <p class="section-subtitle">
+              Ready to transform your digital presence? We'd love to hear about
+              your project!
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h3>Get In Touch</h3>
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <strong>Email Us</strong>
+                  <p>hello@codewave.digital</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                  <strong>Call Us</strong>
+                  <p>+1 (555) 847-3925</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <strong>Visit Us</strong>
+                  <p>456 Innovation Hub<br />Tech District, TD 67890</p>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                  <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                  <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                  <a href="#" aria-label="GitHub" class="social-link">💻</a>
+                  <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-container">
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    aria-describedby="name-error"
+                  />
+                  <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    aria-describedby="email-error"
+                  />
+                  <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" />
+                </div>
+
+                <div class="form-group">
+                  <label for="service">Service Interest</label>
+                  <select id="service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="web">Web Development</option>
+                    <option value="mobile">Mobile Development</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="cloud">Cloud Solutions</option>
+                    <option value="consulting">Consulting</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="budget">Project Budget</label>
+                  <select id="budget" name="budget">
+                    <option value="">Select budget range</option>
+                    <option value="5k-10k">$5K - $10K</option>
+                    <option value="10k-25k">$10K - $25K</option>
+                    <option value="25k-50k">$25K - $50K</option>
+                    <option value="50k+">$50K+</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Project Details *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    aria-describedby="message-error"
+                    placeholder="Tell us about your project requirements..."
+                  ></textarea>
+                  <span class="error-message" id="message-error"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="newsletter" name="newsletter" />
+                    <span class="checkmark"></span>
+                    Subscribe to our newsletter for tech insights
+                  </label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      name="privacy"
+                      required
+                    />
+                    <span class="checkmark"></span>
+                    I agree to the
+                    <a href="#" class="privacy-link">Privacy Policy</a> *
+                  </label>
+                  <span class="error-message" id="privacy-error"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-loading">Sending...</span>
+                  <span class="btn-icon">📨</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-icon">🌐</span>
+              <span class="logo-text">CodeWave</span>
+            </div>
+            <p class="footer-description">
+              Pioneering digital transformation through innovative technology
+              solutions. We create tomorrow's digital experiences, today.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Mobile Apps</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+              <li><a href="#services">Cloud Solutions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 CodeWave. All rights reserved.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="GitHub">💻</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="service-modal" class="modal" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div id="modal-body">
+          <!-- Modal content will be dynamically loaded -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <!-- Service Worker Registration for PWA -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => console.log("SW registered"))
+            .catch((registrationError) =>
+              console.log("SW registration failed")
+            );
+        });
+      }
+    </script>
+  </body>
+</html>
